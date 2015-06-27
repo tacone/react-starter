@@ -5,10 +5,50 @@ export default class HomePage extends React.Component {
 		return {};
 	}
 	render() {
-		return <div>
-			<h2>Homepage</h2>
-			<p>This is the homepage.</p>
-			<p>Try to go to a todo list page.</p>
+		return <div className="container">
+			<div className="row">
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+			</div>
+			<div className="row">
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+			</div>
+			<div className="row">
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+				<div className="col-xs-3">
+					<div className="thumb"></div>
+				</div>
+			</div>
+
 		</div>;
 	}
 }

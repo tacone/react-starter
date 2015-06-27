@@ -29,7 +29,7 @@ module.exports = function(options) {
 	var cssLoader = options.minimize ? "css-loader?module" : "css-loader?module&localIdentName=[path][name]---[local]---[hash:base64:5]";
 	var stylesheetLoaders = {
 		"css": cssLoader,
-		"less": [cssLoader, "less-loader"],
+		"less": "raw!less", // [cssLoader, "less-loader"],
 		"styl": [cssLoader, "stylus-loader"],
 		"scss|sass": [cssLoader, "sass-loader"]
 	};
@@ -103,11 +103,14 @@ module.exports = function(options) {
 	Object.keys(stylesheetLoaders).forEach(function(ext) {
 		var stylesheetLoader = stylesheetLoaders[ext];
 		if(Array.isArray(stylesheetLoader)) stylesheetLoader = stylesheetLoader.join("!");
+		console.log("loader: "+stylesheetLoader);
 		if(options.prerender) {
 			stylesheetLoaders[ext] = stylesheetLoader.replace(/^css-loader/, "css-loader/locals");
 		} else if(options.separateStylesheet) {
+			console.log("separate");
 			stylesheetLoaders[ext] = ExtractTextPlugin.extract("style-loader", stylesheetLoader);
 		} else {
+			console.log("normal");
 			stylesheetLoaders[ext] = "style-loader!" + stylesheetLoader;
 		}
 	});
@@ -130,8 +133,9 @@ module.exports = function(options) {
 				"process.env": {
 					NODE_ENV: JSON.stringify("production")
 				}
-			}),
-			new webpack.NoErrorsPlugin()
+			})
+			//,
+			//new webpack.NoErrorsPlugin()
 		);
 	}
 
