@@ -11,9 +11,7 @@ export default class MainMenu extends React.Component {
             <div className="container">
                 <ul className="nav navbar-nav">
                     <li><Link to="home">home</Link></li>
-                    <li><Link to="todo">todo page</Link></li>
                     <li><Link to="some-page">some page</Link></li>
-                    <li><Link to="chat" params={{room: "home"}}>Chat</Link></li>
                     <li><Link to="readme">README.md</Link></li>
                 </ul>
             </div>

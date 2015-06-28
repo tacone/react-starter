@@ -1,7 +1,7 @@
 import async from "async";
 import React from "react";
 import Router from "react-router";
-import withTimeout from "./withTimeout";
+import withTimeout from "./../app/utils/withTimeout";
 import ReactUpdates from "react/lib/ReactUpdates";
 import StoresWrapper from "./StoresWrapper";
 
