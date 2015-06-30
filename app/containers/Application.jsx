@@ -15,10 +15,13 @@ import styles from "./Application.css";
 
 export default class Application extends React.Component {
     static getProps(stores, params) {
-        var transition = stores.Router.getItem("transition");
         return {
-            loading: !!transition
-        };
+            loading: false
+        }
+        //var transition = stores.Router.getItem("transition");
+        //return {
+        //    loading: !!transition
+        //};
     }
 
     render() {

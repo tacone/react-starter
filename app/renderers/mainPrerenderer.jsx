@@ -1,7 +1,6 @@
-import routes from "../app/mainRoutes";
-import storesDescriptions from "../app/mainStoresDescriptions";
-import html from "../app/mainPrerender.html";
-import Prerenderer from "./Prerenderer";
+import routes from "../mainRoutes";
+import html from "./mainPrerender.html";
+import Prerenderer from "./../../config/Prerenderer";
 
 export default class MainRenderer {
 	constructor(options) {
@@ -14,6 +13,7 @@ export default class MainRenderer {
 
 	render(path, readItems, callback) {
 		//var stores = createStoresForPrerender(storesDescriptions, readItems);
+		var stores = {};
 		this.prerenderer.getContent(path, stores, (err, content, data) => {
 			if(err) return callback(err);
 			var page = this.html
